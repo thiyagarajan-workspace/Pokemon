@@ -13,4 +13,4 @@ Runs the app in the development mode.
 
 Note:
 
-All most I spent 5hours to completed this task.
+All most I spent 5hours to completed this task. I couldn't complete all the requirements.
