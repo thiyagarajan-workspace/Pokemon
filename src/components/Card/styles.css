@@ -1,0 +1,56 @@
+.card-container {
+	font-size: small;
+	margin: 15px;
+	height: 300px;
+	min-width: 250px;
+	max-width: 250px;
+	flex-basis: 33.3%;
+	border-radius: 4px;
+	background: rgb(255, 255, 255);
+	box-shadow: 0 1px 8px rgb(220 220 220);
+	justify-content: space-between;
+	position: relative;
+}
+
+.image-container {
+	width: 100%;
+	display: flex;
+	position: absolute;
+	justify-content: center;
+}
+
+.image {
+	display: flex;
+}
+
+.detail-container {
+	margin: 20px;
+	bottom: 0px;
+	position: absolute;
+}
+
+.title-container {
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+}
+
+.title {
+	text-transform: uppercase;
+}
+
+.abilities-container {
+	display: flex;
+	justify-content: center;
+}
+
+.abilities {
+	margin-top: 5px;
+	font-size: small;
+}
+
+.weight {
+}
+
+.height {
+}

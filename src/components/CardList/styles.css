@@ -1,0 +1,11 @@
+.card-list-container {
+	display: flex;
+	margin: 1rem;
+}
+
+.layout-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: fit-content;
+	justify-content: center;
+}
