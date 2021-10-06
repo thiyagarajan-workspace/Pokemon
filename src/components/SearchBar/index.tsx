@@ -12,7 +12,7 @@ const SearchBar = ({keyword, setKeyword}:Props) => {
        className="search-box"
        key="random1"
        value={keyword}
-       placeholder={"Search Pokemon"}
+       placeholder={"Search Pokemon - Ex Name, Weight, Height"}
        onChange={(e) => setKeyword(e.target.value)}
       />
     );

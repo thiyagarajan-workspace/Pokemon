@@ -10,9 +10,9 @@ type State = {
 	loading: boolean;
 	page: Array<any>;
 	data: Array<any>;
-	pageNumber: number;
 	pageLimit: number;
 	dataCount: number;
+	pageNumber: number;
 	searchKeyword: string;
 };
 
@@ -24,7 +24,7 @@ export default class Home extends React.Component<Props, State> {
 		pageNumber: 1,
 		dataCount: 0,
 		loading: false,
-		searchKeyword: ''
+		searchKeyword: ""
 	};
 
 	componentDidMount = () => {

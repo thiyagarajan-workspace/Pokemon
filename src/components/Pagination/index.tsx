@@ -17,23 +17,24 @@ function Pagination({ pageNumber, pageLimit, dataCount, dataLimit, onChange} : P
 	const [ currentPage, setCurrentPage ] = useState(pageNumber);
 
 	function goToNextPage() {
-		setCurrentPage((page: number) => page + 1);
-    onChange(currentPage + 1);
+		setCurrentPage((currentPage: number) => currentPage + 1);
+    	onChange(currentPage + 1);
 	}
 
 	function goToPreviousPage() {
-		setCurrentPage((page: number) => page - 1);
-    onChange(currentPage - 1);
+		setCurrentPage((currentPage: number) => currentPage - 1);
+    	onChange(currentPage - 1);
 	}
 
 	function changePage(event:any) {
 		const pageNumber = event ? Number(event?.target?.textContent) : 0;
 		setCurrentPage(pageNumber);
-    onChange(pageNumber);
+    	onChange(pageNumber);
 	}
 
 	const getPaginationGroup = () => {
 		let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
+		start = (start + pageLimit) > pages ? pages - pageLimit : start; 
 		return new Array(pageLimit).fill(1).map((_, idx) => start + idx + 1);
 	};
 
@@ -43,7 +44,7 @@ function Pagination({ pageNumber, pageLimit, dataCount, dataLimit, onChange} : P
 				<IconButton size={"small"} onClick={goToPreviousPage} className={`prev ${currentPage === 1 ? 'disabled' : ''}`}>
 					<KeyboardArrowLeftRounded fontSize="large" />
 				</IconButton>
-				{/* {getPaginationGroup().map((item, index) => (
+				 {getPaginationGroup().map((item, index) => (
 					<IconButton
 						key={index}
             size={"medium"}
@@ -52,7 +53,7 @@ function Pagination({ pageNumber, pageLimit, dataCount, dataLimit, onChange} : P
 					>
 						<span>{item}</span>
 					</IconButton>
-				))}  */}
+				))}
 				<IconButton size={"small"} onClick={goToNextPage} className={`next ${currentPage === pages ? 'disabled' : ''}`}>
 					<KeyboardArrowRightRounded fontSize="large" />
 				</IconButton>
