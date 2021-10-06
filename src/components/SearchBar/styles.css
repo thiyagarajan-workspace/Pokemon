@@ -3,12 +3,19 @@
 	height: 45px;
 	border: none;
 	padding: 10px;
+	font-size: medium;
+	font-weight: bold;
 	border-radius: 4px;
 	background-color: white;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 10px;
 	box-sizing: border-box;
+}
+
+.search-box:hover,
+.search-box:focus {
+	outline: none;
 }
 
 @media screen and (max-width: 600px) {

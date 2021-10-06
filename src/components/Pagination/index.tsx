@@ -13,7 +13,7 @@ type Props = {
 };
 
 function Pagination({ pageNumber, pageLimit, dataCount, dataLimit, onChange} : Props) {
-	const [ pages ] = useState(Math.round(dataCount / dataLimit));
+	const pages = Math.round(dataCount / dataLimit);
 	const [ currentPage, setCurrentPage ] = useState(pageNumber);
 
 	function goToNextPage() {
@@ -34,7 +34,8 @@ function Pagination({ pageNumber, pageLimit, dataCount, dataLimit, onChange} : P
 
 	const getPaginationGroup = () => {
 		let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
-		start = (start + pageLimit) > pages ? pages - pageLimit : start; 
+		start = (start + pageLimit) > pages ? pages - pageLimit : start;
+		debugger; 
 		return new Array(pageLimit).fill(1).map((_, idx) => start + idx + 1);
 	};
 

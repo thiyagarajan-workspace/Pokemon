@@ -1,4 +1,5 @@
 import Home from './pages/Home';
+import { hot as HotLoader } from 'react-hot-loader/root';
 import './App.css';
 
 function App() {
@@ -9,4 +10,4 @@ function App() {
 	);
 }
 
-export default App;
+export default HotLoader(App);

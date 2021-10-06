@@ -52,3 +52,9 @@
 	pointer-events: none;
 	color: #999;
 }
+
+@media screen and (max-width: 600px) {
+	.paginationItem {
+		display: none;
+	}
+}

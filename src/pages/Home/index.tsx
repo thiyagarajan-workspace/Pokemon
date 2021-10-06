@@ -20,9 +20,9 @@ export default class Home extends React.Component<Props, State> {
 	state: State = {
 		page: [],
 		data: [],
+		dataCount: 0,
 		pageLimit: 20,
 		pageNumber: 1,
-		dataCount: 0,
 		loading: false,
 		searchKeyword: ""
 	};
@@ -77,29 +77,33 @@ export default class Home extends React.Component<Props, State> {
 	render() {
 		const { page, searchKeyword, pageNumber, pageLimit, dataCount, loading } = this.state;
 
-		if (loading) return <h5 className="loader_contatiner"> Loading... </h5>;
+		if(loading) {
+			return (<div className="loader_contatiner"><h4>Loading...</h4></div>)
+		} 
 
 		return (
-			<div className="home-contatiner">
-				<div className="header-container">
-					<SearchBar keyword={searchKeyword} setKeyword={(value: string) => this.onSearch(value)} />
+				<div className="home-contatiner">
+					<div className="header-container">
+						<SearchBar keyword={searchKeyword} setKeyword={(value: string) => this.onSearch(value)} />
+					</div>
+					<Pagination
+						onChange={(value: number) => this.onPaginationChange(value)}
+						pageLimit={4}
+						pageNumber={pageNumber}
+						dataCount={dataCount}
+						dataLimit={pageLimit}
+					/>
+					<CardList data={page} />
+					<Pagination
+						onChange={(value: number) => this.onPaginationChange(value)}
+						pageLimit={4}
+						pageNumber={pageNumber}
+						dataCount={dataCount}
+						dataLimit={pageLimit}
+					/>
 				</div>
-				<Pagination
-					onChange={(value: number) => this.onPaginationChange(value)}
-					pageLimit={4}
-					pageNumber={pageNumber}
-					dataCount={dataCount}
-					dataLimit={pageLimit}
-				/>
-				<CardList data={page} />
-				<Pagination
-					onChange={(value: number) => this.onPaginationChange(value)}
-					pageLimit={4}
-					pageNumber={pageNumber}
-					dataCount={dataCount}
-					dataLimit={pageLimit}
-				/>
-			</div>
 		);
 	}
 }
+
+
